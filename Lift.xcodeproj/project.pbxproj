@@ -29,9 +29,46 @@
 		1438B9232D83257600F0C6C1 /* LiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1438B9462D83276C00F0C6C1 /* Exceptions for "LiftView" folder in "LiftTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LiftView.swift,
+			);
+			target = 1438B9182D83257600F0C6C1 /* LiftTests */;
+		};
+		1438B9472D83276C00F0C6C1 /* Exceptions for "LiftView" folder in "LiftUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LiftView.swift,
+			);
+			target = 1438B9222D83257600F0C6C1 /* LiftUITests */;
+		};
+		1438B94C2D8327C400F0C6C1 /* Exceptions for "Lift" folder in "LiftTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Item.swift,
+				Models/LiftSession.swift,
+			);
+			target = 1438B9182D83257600F0C6C1 /* LiftTests */;
+		};
+		1438B94D2D8327C400F0C6C1 /* Exceptions for "Lift" folder in "LiftUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Item.swift,
+				Models/LiftSession.swift,
+			);
+			target = 1438B9222D83257600F0C6C1 /* LiftUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1438B9092D83257400F0C6C1 /* Lift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1438B94C2D8327C400F0C6C1 /* Exceptions for "Lift" folder in "LiftTests" target */,
+				1438B94D2D8327C400F0C6C1 /* Exceptions for "Lift" folder in "LiftUITests" target */,
+			);
 			path = Lift;
 			sourceTree = "<group>";
 		};
@@ -43,6 +80,15 @@
 		1438B9262D83257600F0C6C1 /* LiftUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = LiftUITests;
+			sourceTree = "<group>";
+		};
+		1438B9422D83276C00F0C6C1 /* LiftView */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1438B9462D83276C00F0C6C1 /* Exceptions for "LiftView" folder in "LiftTests" target */,
+				1438B9472D83276C00F0C6C1 /* Exceptions for "LiftView" folder in "LiftUITests" target */,
+			);
+			path = LiftView;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				1438B9092D83257400F0C6C1 /* Lift */,
+				1438B9422D83276C00F0C6C1 /* LiftView */,
 				1438B91C2D83257600F0C6C1 /* LiftTests */,
 				1438B9262D83257600F0C6C1 /* LiftUITests */,
 				1438B9082D83257400F0C6C1 /* Products */,
@@ -109,6 +156,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				1438B9092D83257400F0C6C1 /* Lift */,
+				1438B9422D83276C00F0C6C1 /* LiftView */,
 			);
 			name = Lift;
 			packageProductDependencies = (

@@ -9,53 +9,74 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State private var selection = 5
+  
+    let demoLiftSessions = [
+        LiftSession(id: 001, name: "Upper 1", imageName: "upper1"),
+        LiftSession(id: 002, name: "Lower 1", imageName: "lower1"),
+        LiftSession(id: 003, name: "Upper 2", imageName: "upper2"),
+        LiftSession(id: 004, name: "Lower 2", imageName: "lower2")
+    ]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
+        TabView(selection:$selection) {
+            FoodView()
+                .tabItem{ Label("Food & Drink", systemImage: "fork.knife") } .tag(1)
+            
+            TrackingView()
+                .tabItem{ Label("Progress", systemImage: "chart.line.uptrend.xyaxis") } .tag(2)
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            LearnView()
+                .tabItem{ Label("Learn", systemImage: "book") } .tag(3)
+        
+            SprintView()
+                .tabItem{ Label("HIIT", systemImage: "figure.highintensity.intervaltraining") } .tag(4)
+            
+            LiftView(liftSessions: demoLiftSessions)
+                .tabItem{ Label("Lift", systemImage: "dumbbell") } .tag(5)
         }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        .navigationViewStyle(.stack)
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+//        .modelContainer(for: Item.self, inMemory: true)
+}
+
+
+struct FoodView: View {
+    var body: some View {
+        NavigationView {
+            List {  Text("Coming Soon!")
+            }.navigationTitle("Food & Drink")
+        }
+    }
+}
+
+struct TrackingView: View {
+    var body: some View {
+        NavigationView {
+            List {  Text("Coming Soon!")
+            }.navigationTitle("Progress")
+        }
+    }
+}
+
+struct LearnView: View {
+    var body: some View {
+        NavigationView {
+            List {  Text("Coming Soon!")
+            }.navigationTitle("Lessons")
+        }
+    }
+}
+
+struct SprintView: View {
+    var body: some View {
+        NavigationView {
+            List {  Text("Coming Soon!")
+            }.navigationTitle("Sprint Workouts")
+        }
+    }
 }
