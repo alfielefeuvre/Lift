@@ -33,6 +33,7 @@
 		1438B9462D83276C00F0C6C1 /* Exceptions for "LiftView" folder in "LiftTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ExerciseListVew.swift,
 				LiftView.swift,
 			);
 			target = 1438B9182D83257600F0C6C1 /* LiftTests */;
@@ -40,6 +41,7 @@
 		1438B9472D83276C00F0C6C1 /* Exceptions for "LiftView" folder in "LiftUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ExerciseListVew.swift,
 				LiftView.swift,
 			);
 			target = 1438B9222D83257600F0C6C1 /* LiftUITests */;
@@ -47,7 +49,9 @@
 		1438B94C2D8327C400F0C6C1 /* Exceptions for "Lift" folder in "LiftTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ContentView2.swift,
 				Item.swift,
+				Models/ExerciseStat.swift,
 				Models/LiftSession.swift,
 			);
 			target = 1438B9182D83257600F0C6C1 /* LiftTests */;
@@ -55,7 +59,9 @@
 		1438B94D2D8327C400F0C6C1 /* Exceptions for "Lift" folder in "LiftUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ContentView2.swift,
 				Item.swift,
+				Models/ExerciseStat.swift,
 				Models/LiftSession.swift,
 			);
 			target = 1438B9222D83257600F0C6C1 /* LiftUITests */;

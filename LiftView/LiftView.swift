@@ -15,17 +15,31 @@ struct LiftView: View {
             List {
                 ForEach(liftSessions) { session in
                     Section(session.name) {
-                        Text("session")
+                        VStack {
+                            NavigationLink { ExerciseListView(exerciseStats: session.exerciseStats ?? []) } label: { LiftSessionCard(liftSession: session) }
+                        }
                     }
-                    
-                    //NavigationLink { LessonView(lesson: lesson)} label: { LessonItem(lesson: lesson) }
-            
                 }
-                
-                 
-                
-                
-            }.navigationTitle("Lift Workout")
+            }.navigationTitle("Lift Workouts")
+        }
+    }
+}
+
+struct LiftSessionCard: View {
+    let liftSession: LiftSession
+    
+    var body: some View {
+        HStack {
+            VStack {
+                Text("Progress")
+                Text("\(liftSession.progress)%")
+                Text("\(liftSession.exerciseStats?.count ?? 0)")
+            }
+            Image(liftSession.imageName)
+                .resizable()
+                .frame(width: 200, height: 200)
+                .clipShape(Capsule())
+            Spacer()
         }
     }
 }
