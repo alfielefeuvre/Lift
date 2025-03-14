@@ -66,8 +66,8 @@ extension ContentView2 {
                      ]),
             LiftSession(id: 004, name: "Lower 2", imageName: "deadlift",
                         exerciseStats: [
-                            ExerciseStat(name: "Dead Lift",         sets: 4, reps: 8, percentage: 88, weightKg: 76.9, imageName: "benchpress"),
-                            ExerciseStat(name: "Dead Lift",         sets: 1, reps: 15, percentage: 78, weightKg: 68.2, imageName: "benchpress"),
+                            ExerciseStat(name: "Dead Lift",         sets: 4, reps: 8, percentage: 88, weightKg: 76.9, imageName: "deadlift"),
+                            ExerciseStat(name: "Dead Lift",         sets: 1, reps: 15, percentage: 78, weightKg: 68.2, imageName: "deadlift"),
                             ExerciseStat(name: "Back Squat",        sets: 4, reps: 8, percentage: 64, weightKg: 55, imageName: "squat"),
                             ExerciseStat(name: "Touch Downs",       sets: 3, reps: 20, percentage: 0, weightKg: 20, imageName: "benchpress"),
                      ])

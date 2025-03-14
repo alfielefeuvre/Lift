@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct LiftApp: App {
+    @StateObject var liftController = LiftController()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -27,6 +29,7 @@ struct LiftApp: App {
         WindowGroup {
             ContentView2()
         }
+        .environmentObject(liftController)
         .modelContainer(sharedModelContainer)
     }
 }

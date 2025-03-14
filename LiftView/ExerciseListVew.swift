@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ExerciseListView: View {
+    @EnvironmentObject var liftController: LiftController
+   
     let exerciseStats: [ExerciseStat]
     
     var body: some View {
@@ -29,7 +31,7 @@ struct ExerciseCard: View {
             VStack(alignment: .leading) {
                 Text(exercise.name).font(.headline)
                 HStack {
-                    Image("deadlift")
+                    exercise.image
                         .resizable()
                         .frame(width: 70, height: 70)
                         .clipShape(Capsule())
